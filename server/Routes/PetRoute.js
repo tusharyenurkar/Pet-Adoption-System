@@ -22,4 +22,18 @@ router.post('/services', upload.single('picture'), postPetRequest);
 router.put('/approving/:id', approveRequest);
 router.delete('/delete/:id', deletePost);
 
+// ✅ Added Route to fetch all pets regardless of status
+router.get('/allPets', async (req, res) => {
+  try {
+    const data = await require('../Model/PetModel').find().sort({ updatedAt: -1 });
+    if (data.length > 0) {
+      res.status(200).json(data);
+    } else {
+      res.status(404).json({ error: 'No data found' });
+    }
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
 module.exports = router;
