@@ -39,7 +39,7 @@ const Footer = (props) => {
           &nbsp;&nbsp;|&nbsp;&nbsp;
           <a
             className="contact-links"
-            href="https://www.instagram.com/isthat_tusharr/"
+            href="https://www.instagram.com/tushar_4uh/"
             target="_blank"
             rel="noopener noreferrer"
           >
