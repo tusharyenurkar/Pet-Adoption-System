@@ -34,7 +34,10 @@ const Contact = () => {
         </a>
 
         <i className="fa fa-instagram"></i>
-        <a className="mail-links" href="https://www.instagram.com/tushar_4uh/">
+        <a
+          className="mail-links"
+          href="https://www.instagram.com/isthat_tusharr/"
+        >
           @tushar_4uh
         </a>
 
