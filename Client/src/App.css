@@ -4,6 +4,12 @@
     box-sizing: border-box;
 }
 
+html, body {
+  width: 100%;
+  overflow-x: hidden;  /* 🔥 this line is important */
+}
+
+
 :root {
     --orange: #fea034;
     --hoverorange: #ff9317;
@@ -42,39 +48,72 @@
     font-size: 29px;
 }
 
+/* MAIN NAVBAR STYLES */
+.navbar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; /* Enables wrapping in smaller screens */
+  padding: 10px 20px;
+  gap: 10px;
+}
+
+/* Navbar Links List */
+.navbar-links {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+/* Individual Links */
 .navbar-links li {
-    display: inline;
-    margin: 0 10px;
+  display: inline-flex;
 }
 
-.navbar-links li>* {
-    text-decoration: none;
-    border: 2px var(--white) solid;
-    padding: 5px 15px;
-    font-family: 'Oxygen', sans-serif;
-    font-weight: bold;
-    font-size: 15px;
-    border-radius: 20px;
-    color: var(--black);
+/* Anchor and Button Styles */
+.navbar-links li > * {
+  text-decoration: none;
+  border: 2px var(--white) solid;
+  padding: 5px 15px;
+  font-family: 'Oxygen', sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+  border-radius: 20px;
+  color: var(--black);
+  background-color: transparent;
+  transition: 0.3s ease;
 }
 
-.navbar-links li>*:hover {
-    border: 2px var(--hoverorange) solid;
-    background-color: var(--hoverorange);
-    color: var(--white);
-    box-shadow: 1.5px 1.5px 3px var(--hoverorange);
+.navbar-links li > *:hover {
+  border: 2px var(--hoverorange) solid;
+  background-color: var(--hoverorange);
+  color: var(--white);
+  box-shadow: 1.5px 1.5px 3px var(--hoverorange);
 }
 
+/* Responsive: mobile fix */
 @media (max-width: 768px) {
-    .navbar-container {
-        flex-direction: column;
-        align-items: center;
-    }
+  .navbar-container {
+    flex-direction: row; /* Keep inline layout */
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 
-    .navbar-container>* {
-        margin-bottom: 10px;
-    }
+  .navbar-links {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .navbar-links li {
+    margin: 5px;
+  }
 }
+
 
 .home-container {
     padding: 20px 50px 70px 50px;
@@ -1553,3 +1592,248 @@ body {
     margin-right: 4px;
     transition: all 0.3s ease;
 }
+
+@media (max-width: 768px) {
+  /* Layout adjustments */
+  .main-container,
+  .admin-screen-container,
+  .contactUs-main-container,
+  .pet-details {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .adopt-pet,
+  .post-pet,
+  .contactUs-left-para,
+  .contactUs-pic img,
+  .login-container,
+  .pet-view-card,
+  .pet-details,
+  .custom-form img {
+    width: 90% !important;
+    max-width: 90% !important;
+  }
+
+  .login-body {
+    height: auto;
+    padding: 20px;
+  }
+
+  .contactUs-main-container {
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .contactUs-pic img {
+    height: auto;
+    margin: 0;
+  }
+
+  .custom-form img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .custom-adopt-form-container {
+    padding: 20px;
+  }
+
+  .filter-selection {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .filter-selection select {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .navbar-time {
+    margin-top: 10px;
+  }
+
+  .custom-input-box {
+    width: 100%;
+    align-items: center;
+  }
+
+  .custom-input {
+    max-width: 90%;
+  }
+
+  .pet-info {
+    align-items: center;
+    text-align: center;
+  }
+
+  .popup-content {
+    width: 90%;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .homeContainer-right,
+  .left-para,
+  .right-para,
+  .card-container,
+  .adopt-pet,
+  .post-pet {
+    width: 90vw;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .main-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .boxes-container {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .dark-grey-container {
+    flex-direction: column;
+    height: auto;
+    width: 90vw;
+    padding: 20px;
+    gap: 20px;
+    border-radius: 20px;
+  }
+
+  .left-pic > img,
+  .right-pic > img {
+    height: auto;
+    width: 100%;
+    max-width: 250px;
+  }
+
+  .homeContainer-right {
+    padding-left: 0px;
+  }
+
+  .left-para,
+  .right-para {
+    font-size: 20px;
+    padding: 0 10px;
+    text-align: center;
+  }
+
+  .card-container {
+    max-width: 100%;
+    height: auto;
+    margin: 20px 0;
+  }
+
+  .adopt-section img,
+  .post-pet-section img {
+    max-width: 100%;
+  }
+
+  .filter-selection-service,
+  .filter-selection {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .input-box {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .post-pet-section input,
+  .post-pet-section textarea {
+    max-width: 100%;
+  }
+
+  .Home-button {
+    width: 100%;
+    max-width: 200px;
+    margin-top: 10px;
+  }
+}
+
+
+.Home-button {
+    height: 42px;
+    width: 145px;
+    
+}
+
+@media (max-width: 768px) {
+  .Home-button {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    font-size: 14px;
+    padding: 10px;
+    text-align: center;
+    margin-top: 15px;
+  }
+
+  .Home-button > img {
+    width: 14px;
+    margin-left: 5px;
+  }
+}
+
+.homeContainer-right {
+    width: 35vw;
+    
+}
+
+.homeContainer-right img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+  .home-container {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .homeContainer-left,
+  .homeContainer-right {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .homeContainer-right {
+    padding-left: 0;
+  }
+
+  .homeContainer-right img {
+    width: 90%;
+    max-width: 300px;
+    height: auto;
+  }
+
+  .home-title {
+    font-size: 38px;
+    text-align: center;
+  }
+
+  .home-titlePlusPng img {
+    width: 50px;
+  }
+
+  .home-second-para {
+    font-size: 16px;
+    text-align: center;
+  }
+}
+
+
